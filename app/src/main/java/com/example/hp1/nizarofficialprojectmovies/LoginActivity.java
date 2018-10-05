@@ -40,7 +40,7 @@ import static android.Manifest.permission.READ_CONTACTS;
  */
 public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<Cursor> {
 
-        Button btAlertActivity;
+        Button btSignUp , btSignIn;
 
 
     /**
@@ -97,13 +97,21 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
 
-        btAlertActivity = (Button) findViewById(R.id.btAlertActivity);
-        btAlertActivity.setOnClickListener(new OnClickListener() {
+        btSignUp = (Button) findViewById(R.id.btSignUp);
+        btSignUp.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                Intent i = new Intent(getApplicationContext(),AlertDialogActivity.class);
+                Intent i = new Intent(getApplicationContext(),SignUpActivity.class);
                 startActivity(i);
+            }
+        });
+        btSignIn = (Button) findViewById(R.id.btSignIn);
+        btSignIn.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i2 = new Intent(getApplicationContext(),MainActivity.class);
+                startActivity(i2);
             }
         });
 
